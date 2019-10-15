@@ -13,15 +13,14 @@ class MyHTTPHandler(http.server.SimpleHTTPRequestHandler):
 
 logging.basicConfig(
     filename='/log/http-server.log',
-    format='&(asctime)s - %(levelname)s - %(message)s',
+    format='%(asctime)s - %(levelname)s - %(message)s',
     level=logging.INFO
 )
-
 logging.getLogger().addHandler(logging.StreamHandler())
-logging.info('Inicializando...')
+logging.info('inicializando...')
 PORT = 8000
 
 httpd = socketserver.TCPServer(("", PORT), MyHTTPHandler)
-logging.info('Escutando a porta: %s', PORT)
-logging.info('Usuário: %s', getpass.getuser())
+logging.info('escutando a porta: %s', PORT)
+logging.info('usuário: %s', getpass.getuser())
 httpd.serve_forever()

@@ -1,12 +1,12 @@
 FROM python:3.6
-LABEL maintainer 'Sarinha <sara at sasaki.com>'
+LABEL maintainer 'Aluno Cod3r <aluno at cod3r.com.br>'
 
 RUN useradd www && \
     mkdir /app && \
-    mkdir /log &&\
+    mkdir /log && \
     chown www /log
 
-USER www 
+USER www
 VOLUME /log
 WORKDIR /app
 EXPOSE 8000

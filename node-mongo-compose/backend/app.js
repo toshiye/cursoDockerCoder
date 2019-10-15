@@ -5,12 +5,12 @@ const mongoose = restful.mongoose
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-//Database 
+// Database
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://db/mydb')
 
-//Middlewares
-server.use(bodyParser.urlencoded({ extended: true }))
+// Middlewares
+server.use(bodyParser.urlencoded({extended:true}))
 server.use(bodyParser.json())
 server.use(cors())
 
@@ -19,12 +19,12 @@ const Client = restful.model('Client', {
     name: { type: String, required: true }
 })
 
-//REST API
+// Rest API
 Client.methods(['get', 'post', 'put', 'delete'])
-Client.updateOptions({ new: true, runValidators: true })
+Client.updateOptions({new: true, runValidators: true})
 
-//Routes
+// Routes
 Client.register(server, '/clients')
 
-//Start Server
+// Start Server
 server.listen(3000)
