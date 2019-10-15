@@ -1,0 +1,8 @@
+Comandos docker
+
+Resolvendo 
+Error starting userland proxy: /forwards/expose/port returned unexpected status: 500.
+
+
+Stop all the running containers docker stop $(docker ps -a -q) or docker ps -a -q | ForEach { docker stop $_ } then
+Stop the Docker on your machine & restart it.

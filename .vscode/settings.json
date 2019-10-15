@@ -1,0 +1,6 @@
+{
+    "editor.detectIndentation": false,
+    "html.format.indentHandlebars": true,
+    "html.format.indentInnerHtml": true,
+    "html-css-class-completion.enableEmmetSupport": true
+}
